@@ -59,11 +59,11 @@ class Etl:
             with ThreadPoolExecutor(max_workers=12) as executor:
                 future = executor.submit(Etl.url_response, file)
                 print(future.result())
-            logging.info("download() function finished................."+ex)
+            logging.info("download() function finished.................")
             return True
         except Exception as ex:
             print(ex)
-            logging.info("download() function error.................")
+            logging.info("download() function error................."+ex)
             return False
 
     @staticmethod
@@ -82,7 +82,7 @@ class Etl:
             return True
         except Exception as ex:
             print(ex)
-            logging.info((ex))
+            logging.info("dbingest() function error................."+ex)
             return False
 
     @staticmethod
@@ -93,15 +93,15 @@ class Etl:
         :return: true or false if the operation is completed or not
         """
         try:
-            logging.info("dbingest() function ingest.................")
+            logging.info("ingest() function ingest.................")
             for df in pd.read_csv(file, compression='gzip', sep='\t', error_bad_lines=False, chunksize=10000,
                                   iterator=True):
                 print(df.head(5))
                 df.to_sql(file.split("/")[-1].split(".")[0], Etl().engine, if_exists='append', index=True)
-            logging.info("dbingest() function finished.................")
+            logging.info("ingest() function finished.................")
             return True
         except Exception as ex:
             print(ex)
-            logging.info("dbingest() function error................."+ex)
+            logging.info("ingest() function error................."+ex)
             return False
 
