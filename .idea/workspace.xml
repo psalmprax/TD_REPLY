@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2986eed7-33b9-42e7-b5ee-6663ffc9c828" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dags/etl_for_s3_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/etl_for_s3_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dags/test_Covid19APICall.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/test_covid19apicall.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
